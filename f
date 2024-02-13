@@ -22,3 +22,15 @@ int write_contacts_log_to_binary(const contacts_log_t *log) {
     fclose(file);
     return 0;
 }
+
+
+if (strstr(fileName, ".bin") != NULL) {
+            log = read_contacts_log_from_binary(fileName); // Use the fileName variable
+            if (log != NULL) {
+                printf("Contacts log loaded from binary file\n");
+            } else {
+                printf("Failed to read contacts log from binary file\n");
+            }
+        } else {
+            printf("Error: Unknown contacts log file extension\n");
+        }
